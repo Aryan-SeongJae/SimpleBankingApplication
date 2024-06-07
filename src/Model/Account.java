@@ -5,7 +5,7 @@ public class Account {
 
     private String accountNumber;
     private String accountHolderName;
-    private double accountBalance;
+    private static double accountBalance;
 
     public Account (String accountNumber, String accountHolderName, double accountBalance) {
         this.accountNumber = accountNumber;
@@ -21,7 +21,7 @@ public class Account {
         return accountHolderName;
     }
 
-    public double getAccountBalance() {
+    public static double getAccountBalance() {
         return accountBalance;
     }
 
@@ -33,21 +33,11 @@ public class Account {
         this.accountHolderName = accountHolderName;
     }
 
-    public void setAccountBalance(double accountBalance) {
+    public static void setAccountBalance(double accountBalance) {
         this.accountBalance = accountBalance;
     }
 
-    public void deposit(double amount) {
-        accountBalance += amount;
-    }
 
-    public void withdraw(double amount) {
-        if (accountBalance - amount < 0) {
-            System.out.println("Insufficient balance");
-        } else {
-            accountBalance -= amount;
-        }
-    }
 
 
 
